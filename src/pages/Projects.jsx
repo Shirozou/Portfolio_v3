@@ -1,51 +1,36 @@
-import React from 'react';
+import { useState } from 'react';
 import { projectsData } from '../data/projects';
+import { Section } from '../components/ui/Section';
+import { ProjectCard } from '../components/ui/ProjectCard';
+import { ProjectModal } from '../components/ui/ProjectModal';
 
 export function Projects() {
-  return (
-    <section id="projects" className="min-h-screen flex flex-col justify-center max-w-6xl mx-auto px-6 py-20 border-t border-slate-900 reveal-on-scroll">
-      <div className="text-center max-w-xl mx-auto mb-12 space-y-3">
-        <div className="text-blue-500 text-xs font-bold uppercase tracking-widest">FEATURED PROJECTS</div>
-        <h2 className="text-3xl font-extrabold text-white tracking-tight">Some of My Recent Work</h2>
-      </div>
+  const [openIndex, setOpenIndex] = useState(null);
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
-        {projectsData.map((project) => (
-          <div 
-            key={project.id} 
-            className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-6 hover:border-blue-500/50 transition-all duration-300 flex flex-col justify-between group shadow-xl"
-          >
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-2xl font-mono font-bold text-blue-500/60">{project.id}</span>
-                <span className="w-2 h-2 rounded-full bg-blue-500 group-hover:scale-125 transition-transform"></span>
-              </div>
-              <h3 className="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">
-                {project.title}
-              </h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                {project.description}
-              </p>
-            </div>
-            
-            <div className="pt-6 space-y-4">
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map((tag, idx) => (
-                  <span key={idx} className="text-xs font-medium px-2.5 py-1 rounded-md bg-slate-800 text-blue-300 border border-slate-700/60">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <a 
-                href={project.link} 
-                className="inline-block text-xs font-semibold text-blue-400 hover:text-blue-300 tracking-wider uppercase transition-colors pt-2"
-              >
-                View Project →
-              </a>
-            </div>
-          </div>
+  const project = openIndex === null ? null : projectsData[openIndex];
+  const nextIndex = openIndex === null ? null : (openIndex + 1) % projectsData.length;
+  const next = projectsData.length > 1 && nextIndex !== null ? projectsData[nextIndex] : null;
+
+  return (
+    <Section id="work" index="02" label="Selected work">
+      <p className="mb-8 max-w-xl text-[15px] leading-relaxed text-neutral-600 print:hidden">
+        Tap a project for the case study: the problem, what I built, and the decisions behind it.
+      </p>
+
+      <ul className="grid gap-5 sm:grid-cols-2 print:grid-cols-1 print:gap-4">
+        {projectsData.map((p, i) => (
+          <li key={p.slug}>
+            <ProjectCard project={p} onOpen={() => setOpenIndex(i)} />
+          </li>
         ))}
-      </div>
-    </section>
+      </ul>
+
+      <ProjectModal
+        project={project}
+        next={next}
+        onClose={() => setOpenIndex(null)}
+        onNext={() => setOpenIndex(nextIndex)}
+      />
+    </Section>
   );
 }
