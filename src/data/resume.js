@@ -3,7 +3,7 @@
 
 export const profile = {
   name: 'Louis Caballero',
-  role: 'Full-Stack Web Developer',
+  role: 'Front-End & Back-End Developer',
   focus: 'React · Node.js · MongoDB',
   summary:
     'I build and ship production web apps end to end, from database schema to deployed UI. I care about fast, accessible interfaces and code the next developer can pick up without a walkthrough.',
@@ -24,7 +24,7 @@ export const highlights = [
   { value: '3+', label: 'Years building for the web' },
   { value: '25+', label: 'Projects completed' },
   { value: '15+', label: 'Apps deployed to production' },
-  { value: 'Full-stack', label: 'React front end, Node back end' },
+  { value: 'Front & Back', label: 'React front end, Node back end' },
 ];
 
 // Most recent first. Bullets: start with a verb, end with a result (a number if you have one).
@@ -43,7 +43,7 @@ export const experience = [
     stack: ['Luau', 'Roblox Studio'],
   },
   {
-    role: 'Freelance Full-Stack Developer',
+    role: 'Freelance Front-End & Back-End Developer',
     company: 'Self-employed',
     url: '',
     period: '2025 — 2026',
@@ -51,7 +51,7 @@ export const experience = [
     current: false,
     bullets: [
       'Took on small web projects alongside my studies to learn how real apps are planned, built and shipped.',
-      'Built full-stack apps with React and Node.js, picking up new tools whenever a project called for them.',
+      'Built front-end and back-end features with React and Node.js, picking up new tools whenever a project called for them.',
       'Deployed my work on Vercel and learned to debug, iterate and improve from real feedback.',
     ],
     stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS', 'Vercel'],
