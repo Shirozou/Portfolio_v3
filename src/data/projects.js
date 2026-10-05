@@ -7,6 +7,7 @@
 //   image   → optional screenshot: put it in src/assets, import it below, and use the import (16:10 works best)
 
 import teechImg from '../assets/teech.png';
+import suepsImg from '../assets/SUEPS.png';
 
 export const projectsData = [
   {
@@ -52,31 +53,45 @@ export const projectsData = [
     ],
   },
   {
-    slug: 'task-manager',
-    title: 'Task Management App',
-    summary: 'Collaborative task board with real-time updates across users.',
-    year: '2023',
+    slug: 'Uniform Exchange Platform',
+    title: 'Student Uniform Exchange Platform',
+    summary: 'Marketplace where students buy, sell and swap school uniforms, with built-in chat and admin moderation.',
+    year: '2026',
     type: 'Personal project',
-    role: 'Solo: front end, data model',
+    role: 'Solo: front end, back end',
     timeline: '4 weeks',
-    live: '',
-    repo: '',
-    image: '',
-    stack: ['React', 'JavaScript', 'Firebase'],
+    live: 'https://school-uniform-exchange-platform.vercel.app/',
+    repo: 'https://github.com/anniesrdnl/School-Uniform-Exchange-Platform.git',
+    image: suepsImg,
+    stack: ['React', 'Vite', 'Node.js', 'Express', 'Supabase', 'Socket.io', 'Tailwind CSS', 'Cloudinary', 'Vercel', 'Render'],
     overview:
-      'A shared board where changes from one teammate show up for everyone else without a refresh. The goal was to learn real-time data and the edge cases that come with it.',
+      'Uniforms are outgrown long before they wear out, yet families keep buying new ones. SUEPS gives students one place to list a uniform, find the right size, message the owner and arrange the exchange. It runs on desktop and phones from a single codebase.',
     built: [
-      'Kanban board with drag-and-drop between columns.',
-      'Firestore listeners so every open client stays in sync.',
-      'Firebase Auth with per-board access rules enforced in security rules, not just the UI.',
+      'Listings with photo uploads, plus search and filters by category, size, condition and price.',
+      'Exchange flow with clear states: a buyer sends a request, the seller accepts, they meet up and the seller marks it completed.',
+      'Real-time chat between buyer and seller, with photo sharing, built on Socket.io.',
+      'JWT authentication, reviews after each exchange, and a report button for flagging content.',
+      'Admin dashboard to review stats and moderate users, listings and reports.',
     ],
     decisions: [
       {
-        title: 'Security rules over client checks',
-        detail: 'Access control lives in Firestore rules, so a modified client still can’t read another team’s board.',
+        title: 'A status flow instead of free-form chat deals',
+        detail: 'A request moves pending → accepted → completed. Accepting reserves the listing and completing marks it sold, so two buyers can’t claim the same uniform.',
+      },
+      {
+        title: 'Access rules enforced on the server',
+        detail: 'JWT middleware and admin-only routes live in the Express API, and the database tables use row-level security, so a modified client can’t reach other users’ data.',
+      },
+      {
+        title: 'One responsive codebase',
+        detail: 'The navbar switches to a bottom bar on mobile, so students can list and chat from their phones without a separate app.',
       },
     ],
-    results: [{ value: 'Real-time', label: 'Sync across clients' }],
+    results: [
+      { value: '3', label: 'User flows: buyer, seller, admin' },
+      { value: 'Real-time', label: 'Chat between buyer and seller' },
+      { value: '1', label: 'Codebase for desktop and mobile' },
+    ],
   },
   {
     slug: 'crypto-dashboard',
