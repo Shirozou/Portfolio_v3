@@ -8,6 +8,7 @@
 
 import teechImg from '../assets/teech.png';
 import suepsImg from '../assets/SUEPS.png';
+import mobaiImg from '../assets/MoBai.png';
 
 export const projectsData = [
   {
@@ -63,7 +64,7 @@ export const projectsData = [
     live: 'https://school-uniform-exchange-platform.vercel.app/',
     repo: 'https://github.com/anniesrdnl/School-Uniform-Exchange-Platform.git',
     image: suepsImg,
-    stack: ['React', 'Vite', 'Node.js', 'Express', 'Supabase', 'Socket.io', 'Tailwind CSS', 'Cloudinary', 'Vercel', 'Render'],
+    stack: ['React', 'Vite', 'Node.js', 'Express', 'Supabase', 'Socket.io', 'Tailwind CSS', 'Cloudinary', 'Vercel'],
     overview:
       'Uniforms are outgrown long before they wear out, yet families keep buying new ones. SUEPS gives students one place to list a uniform, find the right size, message the owner and arrange the exchange. It runs on desktop and phones from a single codebase.',
     built: [
@@ -94,30 +95,39 @@ export const projectsData = [
     ],
   },
   {
-    slug: 'crypto-dashboard',
-    title: 'Crypto Dashboard',
-    summary: 'Live cryptocurrency prices with interactive charts and a watchlist.',
-    year: '2023',
+    slug: 'text-to-speech',
+    title: 'MoBai Language',
+    summary: 'MoBai Language reads your script aloud in the browser, highlighting each word as it is spoken.',
+    year: '2026',
     type: 'Personal project',
-    role: 'Solo: front end, API integration',
+    role: 'Solo: front end',
     timeline: '2 weeks',
-    live: '',
-    repo: '',
-    image: '',
-    stack: ['React', 'Tailwind CSS', 'REST API'],
+    live: 'https://mo-bai-language.vercel.app/',
+    repo: 'https://github.com/Shirozou/MoBai_Language.git',
+    image: mobaiImg,
+    stack: ['React', 'Vite', 'JavaScript', 'Web Speech API', 'Vercel'],
     overview:
-      'A dashboard over a public market-data API. The interesting part was staying inside the API’s rate limit while still feeling live.',
+      'Write or paste a script, pick a voice and listen to it read back, with each word highlighted as it is spoken. It runs entirely in the browser on the built-in Web Speech API, so there is no backend, no account and no text sent anywhere.',
     built: [
-      'Price table with sorting and a persistent watchlist.',
-      'Interactive price-history charts with selectable time ranges.',
-      'Request caching and polling backoff to stay under the API rate limit.',
+      'Text input with a word counter and a sample script to start from.',
+      'Voice picker with the available voices grouped by language, your browser’s language first.',
+      'Speak, pause, resume and stop controls, plus rate, pitch and volume sliders with a one-click reset.',
+      'Live word highlighting, a progress indicator and a Standby / On air / Paused status.',
+      'Ctrl/Cmd + Enter shortcut to start speaking, and a clear notice when the browser has no speech synthesis.',
     ],
     decisions: [
       {
-        title: 'One poller, many components',
-        detail: 'A single shared polling hook feeds every widget instead of each component fetching on its own.',
+        title: 'Browser speech instead of a speech API',
+        detail: 'Using the Web Speech API keeps the app free to run and private, since nothing leaves the user’s device, and it needs no server or API key.',
+      },
+      {
+        title: 'Handle missing support gracefully',
+        detail: 'Available voices vary by browser and operating system, so the app lists whatever exists and shows a notice instead of breaking when speech synthesis is unavailable.',
       },
     ],
-    results: [{ value: '0', label: 'Rate-limit errors in normal use' }],
+    results: [
+      { value: '0', label: 'Backend or accounts needed' },
+      { value: '3', label: 'Voice settings: rate, pitch, volume' },
+    ],
   },
 ];
