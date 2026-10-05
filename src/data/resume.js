@@ -22,8 +22,8 @@ export const profile = {
 // The four numbers a recruiter reads first. Keep them honest and checkable.
 export const highlights = [
   { value: '3+', label: 'Years building for the web' },
-  { value: '25+', label: 'Projects completed' },
-  { value: '15+', label: 'Apps deployed to production' },
+  { value: '10', label: 'Projects completed' },
+  { value: '5', label: 'Apps deployed to production' },
   { value: 'Front & Back', label: 'React front end, Node back end' },
 ];
 
