@@ -1,5 +1,3 @@
-// All résumé content lives here. Components only render what's in this file.
-// Anything marked REPLACE is a placeholder — swap it for your real details before deploying.
 
 export const profile = {
   name: 'Louis Caballero',
@@ -8,18 +6,15 @@ export const profile = {
   summary:
     'I build and ship production web apps end to end, from database schema to deployed UI. I care about fast, accessible interfaces and code the next developer can pick up without a walkthrough.',
   location: 'Iloilo, Philippines',
-  availability: 'Open to full-time roles', // set to '' to hide the badge
+  availability: 'Open to full-time roles',
   email: 'louiscaballero321@gmail.com',
   links: {
     github: 'https://github.com/Shirozou',
     linkedin: 'https://www.linkedin.com/in/REPLACE',
   },
-  // Put your PDF in /public (e.g. /public/Louis-Caballero-Resume.pdf) and set this to '/Louis-Caballero-Resume.pdf'.
-  // While empty, the Résumé button prints this page, which has a print layout.
   resumeUrl: '',
 };
 
-// The four numbers a recruiter reads first. Keep them honest and checkable.
 export const highlights = [
   { value: '3+', label: 'Years building for the web' },
   { value: '10', label: 'Projects completed' },
@@ -27,18 +22,17 @@ export const highlights = [
   { value: 'Front & Back', label: 'React front end, Node back end' },
 ];
 
-// Most recent first. Bullets: start with a verb, end with a result (a number if you have one).
 export const experience = [
   {
     role: 'Roblox Game Developer',
     company: 'Roblox',
     url: '',
-    period: 'Present', // add a start year, e.g. '2023 — Present'
+    period: 'Present',
     location: 'Remote',
     current: true,
     bullets: [
-      'Build and script game systems in Roblox Studio using Luau.', // REPLACE with what you shipped
-      'Add a result here: a game you released, player count, visits, or a system you designed.', // REPLACE
+      'Build and script game systems in Roblox Studio using Luau.',
+      'Add a result here: a game you released, player count, visits, or a system you designed.',
     ],
     stack: ['Luau', 'Roblox Studio'],
   },
@@ -65,14 +59,17 @@ export const education = [
     period: '2024 — Present',
     notes: '3rd-year student.',
   },
+  {
+    degree: 'Senior High School',
+    school: 'Oton National High School',
+    period: '2022 — 2024',
+    notes: 'STEM',
+  },
 ];
 
-// Leave the array empty to hide the block.
 export const certifications = [
-  // { name: 'Responsive Web Design', issuer: 'freeCodeCamp', year: '2023', url: '' },
 ];
 
-// level: 'core' = you use it daily and can be interviewed on it. 'familiar' = you've shipped with it but would ramp up.
 export const skills = [
   {
     category: 'Languages',

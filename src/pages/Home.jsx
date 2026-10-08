@@ -56,11 +56,10 @@ export function Home() {
         <img
           src={lowisImg}
           alt={profile.name}
-          className="size-20 rounded-2xl bg-neutral-100 object-cover ring-1 ring-neutral-200 sm:size-28 print:hidden"
+          className="size-48 object-cover object-top sm:size-64 lg:size-80 print:hidden"
         />
       </div>
 
-      {/* At a glance */}
       <dl className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-neutral-200 bg-neutral-200 sm:grid-cols-4 print:mt-8">
         {highlights.map((h) => (
           <div key={h.label} className="bg-white px-5 py-5">

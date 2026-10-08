@@ -1,4 +1,3 @@
-// Résumé-style section: a sticky label in the left gutter, content on the right.
 export function Section({ id, index, label, children }) {
   return (
     <section

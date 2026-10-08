@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 
-// Returns the id of the section currently crossing the middle of the viewport.
-// `ids` must be a stable array (define it at module level).
 export function useActiveSection(ids) {
   const [active, setActive] = useState(null);
 

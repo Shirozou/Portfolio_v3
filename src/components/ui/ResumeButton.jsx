@@ -1,7 +1,6 @@
 import { profile } from '../../data/resume';
 import { Download } from './Icons';
 
-// Downloads the PDF when profile.resumeUrl is set; otherwise prints the page (which has a print layout).
 export function ResumeButton({ className = '', children = 'Download CV' }) {
   const content = (
     <>

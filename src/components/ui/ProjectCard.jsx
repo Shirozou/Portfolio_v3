@@ -8,7 +8,6 @@ const hostOf = (url) => {
   }
 };
 
-// Screenshot if one is provided, otherwise a quiet browser-frame placeholder.
 export function ProjectPreview({ project, className = '' }) {
   const host = hostOf(project.live) || `${project.slug}.vercel.app`;
 

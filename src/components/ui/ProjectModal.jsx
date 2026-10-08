@@ -11,7 +11,6 @@ function Block({ title, children }) {
   );
 }
 
-// Native <dialog>: gives us focus trapping, Esc-to-close and a top layer for free.
 export function ProjectModal({ project, next, onClose, onNext }) {
   const dialogRef = useRef(null);
   const bodyRef = useRef(null);
@@ -33,7 +32,6 @@ export function ProjectModal({ project, next, onClose, onNext }) {
     >
       {project && (
         <div className="flex max-h-[inherit] flex-col">
-          {/* Header */}
           <div className="border-b border-neutral-200 px-5 pt-5 pb-5 sm:px-8 sm:pt-7">
             <div className="flex items-start justify-between gap-4">
               <p className="font-mono text-[11px] tracking-wide text-neutral-400 uppercase">
@@ -79,7 +77,6 @@ export function ProjectModal({ project, next, onClose, onNext }) {
             )}
           </div>
 
-          {/* Body */}
           <div ref={bodyRef} className="flex-1 space-y-8 overflow-y-auto overscroll-contain px-5 py-6 sm:px-8 sm:py-8">
             <ProjectPreview project={project} />
 
@@ -148,7 +145,6 @@ export function ProjectModal({ project, next, onClose, onNext }) {
             </Block>
           </div>
 
-          {/* Footer */}
           {next && (
             <button
               type="button"

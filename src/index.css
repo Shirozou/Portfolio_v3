@@ -10,7 +10,6 @@ html {
   background: #fff;
 }
 
-/* Lock page scroll while a project case study is open */
 html:has(dialog[open]) {
   overflow: hidden;
 }
@@ -31,7 +30,6 @@ html:has(dialog[open]) {
   background-size: 14px 14px;
 }
 
-/* Section reveal: subtle, and skipped entirely for reduced motion and print */
 .reveal-on-scroll {
   opacity: 0;
   transform: translateY(12px);
@@ -42,7 +40,6 @@ html:has(dialog[open]) {
   transform: none;
 }
 
-/* Case-study dialog entrance */
 .project-dialog[open] {
   animation: dialog-in 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -62,9 +59,19 @@ html:has(dialog[open]) {
   .project-dialog[open], .project-dialog[open]::backdrop { animation: none; }
 }
 
-/* "Download résumé" falls back to printing this page */
 @media print {
   @page { margin: 14mm; }
   html { font-size: 13px; }
   .reveal-on-scroll { opacity: 1 !important; transform: none !important; }
+}
+
+.nav-pill-press {
+  animation: nav-pill-press 320ms cubic-bezier(0.3, 1.4, 0.5, 1);
+}
+@keyframes nav-pill-press {
+  0% { transform: scale(0.92); }
+  100% { transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-pill-press { animation: none; }
 }

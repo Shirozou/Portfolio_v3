@@ -1,10 +1,3 @@
-// Each project renders as a card. Clicking it opens a case study built from the same object.
-// The detail copy below is example text — REPLACE it with what you actually built.
-//
-//   live    → your Vercel URL, e.g. 'https://my-app.vercel.app' (the "Live site" button hides while empty)
-//   repo    → GitHub URL (hidden while empty)
-//   builtTitle → optional heading for the `built` list (defaults to 'What I built'; use 'What we built' for team projects)
-//   image   → optional screenshot: put it in src/assets, import it below, and use the import (16:10 works best)
 
 import teechImg from '../assets/teech.png';
 import suepsImg from '../assets/SUEPS.png';
@@ -17,7 +10,7 @@ export const projectsData = [
     summary: 'Consultation booking app that lets students book time with their teachers without the back-and-forth messaging.',
     year: '2026',
     type: 'Group project',
-    role: 'Team member', // REPLACE with the parts you owned, e.g. 'Front end & Supabase integration'
+    role: 'Team member',
     timeline: '6 weeks',
     live: 'https://teech-app.vercel.app/',
     repo: 'https://github.com/Aelowww/Teech',
